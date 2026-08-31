@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #FFFFFF; color: #14161A; font-family: "Public Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #2F9E44; text-decoration: none; }
+  a:hover { color: #248036; }
+  input, select, button, textarea { font-family: inherit; font-size: inherit; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #E7E9EC">
+    <div style="height:3px;display:flex"><div style="flex:1;background:#2F9E44"></div><div style="flex:1;background:#F08C1E"></div><div style="flex:1;background:#E03131"></div></div>
+    <div style="max-width:1240px;margin:0 auto;padding:14px clamp(16px,4vw,32px);display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap">
+      <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;cursor:pointer">
+        <img src="./logo.jpg" alt="Broker Nekretnine" style="width:44px;height:44px;object-fit:contain;border-radius:8px">
+        <div style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.06em">BROKER</span>
+          <span style="font-size:11px;color:#6B7280;letter-spacing:0.14em;text-transform:uppercase">Nekretnine Pančevo</span>
+        </div>
+      </div>
+      <nav style="display:flex;gap:clamp(14px,2vw,28px);align-items:center;margin-left:auto;flex-wrap:wrap">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" onClick="{{ item.onClick }}" style="font-size:14.5px;font-weight:500;color:#14161A;padding:6px 0;border-bottom:2px solid transparent" style-hover="color:#2F9E44;border-bottom-color:#2F9E44">{{ item.label }}</a>
+        </sc-for>
+        <a href="tel:0645285000" style="display:flex;align-items:center;gap:8px;background:#14161A;color:#fff;padding:11px 18px;border-radius:8px;font-size:14px;font-weight:600" style-hover="background:#2F9E44;color:#fff">064 52 85 000</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1">
+
+  <!-- ======================= POČETNA ======================= -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="position:relative;min-height:min(620px,86vh);overflow:hidden;background:#14161A">
+      <div style="position:absolute;inset:0">
+        <img src="slike/hero-main.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:0px;background:#F1F2F4">
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,12,15,0.72) 0%,rgba(10,12,15,0.42) 55%,rgba(10,12,15,0.12) 100%);pointer-events:none"></div>
+      <div style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(56px,10vw,104px) clamp(16px,4vw,32px) 0;pointer-events:none">
+        <div style="max-width:620px;animation:fadeUp .5s ease both">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);color:#fff;padding:7px 14px;border-radius:100px;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">
+            <span style="width:6px;height:6px;border-radius:50%;background:#2F9E44"></span> Agencija za posredovanje · Reg. 1436
+          </div>
+          <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(32px,6vw,60px);line-height:1.06;letter-spacing:-0.02em;color:#fff;margin:22px 0 0;text-wrap:balance">Stanovi u Pančevu: prodaja i izdavanje</h1>
+          <p style="font-size:clamp(15.5px,2vw,18.5px);line-height:1.6;color:rgba(255,255,255,0.82);margin:20px 0 0;max-width:520px">Vodimo vas kroz ceo proces: od procene i oglašavanja do potpisa kod notara. Dve kancelarije, jedan tim, jasan dogovor.</p>
+        </div>
+      </div>
+      <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px) clamp(20px,4vw,0px)">
+        <div style="margin-top:clamp(32px,5vw,56px);background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(10,12,15,0.28);padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px;align-items:end">
+          <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Namena
+            <select value="{{ namena }}" onChange="{{ onNamena }}" style="min-width:0;padding:11px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff;color:#14161A;font-weight:500"><option value="Sve">Prodaja i izdavanje</option><option value="Prodaja">Prodaja</option><option value="Izdavanje">Izdavanje</option></select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Tip
+            <select value="{{ f.tip }}" onChange="{{ onTip }}" style="min-width:0;padding:11px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff;color:#14161A;font-weight:500">
+              <sc-for list="{{ tipovi }}" as="o" hint-placeholder-count="4"><option value="{{ o }}">{{ o }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Lokacija
+            <select value="{{ f.lokacija }}" onChange="{{ onLokacija }}" style="min-width:0;padding:11px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff;color:#14161A;font-weight:500">
+              <sc-for list="{{ lokacije }}" as="o" hint-placeholder-count="6"><option value="{{ o }}">{{ o }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Cena do
+            <input value="{{ f.cenaDo }}" onChange="{{ onCenaDo }}" placeholder="€" style="min-width:0;padding:11px 12px;border:1px solid #E7E9EC;border-radius:8px;width:100%">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Sobe
+            <select value="{{ f.sobe }}" onChange="{{ onSobe }}" style="min-width:0;padding:11px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff;color:#14161A;font-weight:500">
+              <sc-for list="{{ sobeOpcije }}" as="o" hint-placeholder-count="7"><option value="{{ o }}">{{ o }}</option></sc-for>
+            </select>
+          </label>
+          <button onClick="{{ searchAndGo }}" style="background:#2F9E44;color:#fff;border:none;padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer" style-hover="background:#248036">Pretraži</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,76px) clamp(16px,4vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(20px,3vw,32px)">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="border-left:3px solid #E7E9EC;padding-left:18px">
+          <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em">{{ s.value }}</div>
+          <div style="font-size:14px;color:#6B7280;margin-top:4px">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,76px) clamp(16px,4vw,32px)">
+      <div style="display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px">
+        <div>
+          <div style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#F08C1E">Iz ponude</div>
+          <h2 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:-0.02em;margin:10px 0 0">Aktuelni stanovi</h2>
+        </div>
+        <a href="#ponuda" onClick="{{ goOffer }}" style="font-weight:600;font-size:15px;border-bottom:1px solid #2F9E44;padding-bottom:2px">Cela ponuda →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px">
+        <sc-for list="{{ homeListings }}" as="l" hint-placeholder-count="0">
+          <div onClick="{{ l.open }}" style="border:1px solid #E7E9EC;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;transition:box-shadow .2s,transform .2s" style-hover="box-shadow:0 16px 40px rgba(10,12,15,0.12);transform:translateY(-3px)">
+            <div style="position:relative;height:210px">
+              {{ l.img }}
+              <div style="position:absolute;top:12px;left:12px;display:flex;gap:6px;pointer-events:none">
+                <span style="background:#14161A;color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ l.namena }}</span>
+                <span style="background:{{ l.badgeColor }};color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ l.badge }}</span>
+              </div>
+            </div>
+            <div style="padding:18px 18px 20px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+                <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.01em">{{ l.cena }}</span>
+                <span style="font-size:13px;color:#6B7280">{{ l.cenaM2 }}</span>
+              </div>
+              <div style="font-weight:600;font-size:16px;margin-top:10px">{{ l.naslov }}</div>
+              <div style="font-size:14px;color:#6B7280;margin-top:3px">{{ l.naselje }}, Pančevo</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid #E7E9EC">
+                <span style="font-size:12.5px;color:#14161A;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.kvadratura }}</span>
+                <span style="font-size:12.5px;color:#14161A;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.sobe }}</span>
+                <span style="font-size:12.5px;color:#14161A;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.sprat }}</span>
+                <span style="font-size:12.5px;color:#14161A;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.grejanje }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#F7F8F9;border-top:1px solid #E7E9EC;border-bottom:1px solid #E7E9EC">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,76px) clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+        <div style="min-width:0">
+          <div style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#2F9E44">Prodajete ili izdajete?</div>
+          <h2 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:-0.02em;margin:10px 0 16px;text-wrap:balance">Hajde da zajedno pronađemo kupca za tvoj stan</h2>
+          <p style="font-size:17px;line-height:1.65;color:#4B5158;margin:0 0 28px">Nekretninu obradimo profesionalno (fotografija, opis, cena u skladu sa tržištem) i predstavimo je publici od preko osam hiljada ljudi koja nas prati svakog dana.</p>
+          <div style="display:flex;gap:12px">
+            <a href="#prodaj" onClick="{{ goSell }}" style="background:#14161A;color:#fff;padding:14px 24px;border-radius:8px;font-weight:600" style-hover="background:#2F9E44;color:#fff">Kako radimo</a>
+            <a href="viber://chat?number=%2B381645285000" style="border:1px solid #14161A;color:#14161A;padding:14px 24px;border-radius:8px;font-weight:600" style-hover="background:#14161A;color:#fff">Pišite nam</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;min-width:0">
+          <div style="height:230px;min-width:0"><img src="slike/home-team-1.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:12px;background:#F1F2F4"></div>
+          <div style="height:230px;min-width:0"><img src="slike/home-team-2.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:12px;background:#F1F2F4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,76px) clamp(16px,4vw,32px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px">
+        <sc-for list="{{ services }}" as="v" hint-placeholder-count="3">
+          <div style="border:1px solid #E7E9EC;border-radius:12px;padding:28px">
+            <div style="width:40px;height:4px;background:{{ v.color }};border-radius:2px"></div>
+            <h3 style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;margin:18px 0 10px">{{ v.title }}</h3>
+            <p style="font-size:15px;line-height:1.6;color:#6B7280;margin:0">{{ v.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <!-- ======================= PONUDA ======================= -->
+  <sc-if value="{{ isOffer }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(32px,6vw,56px) clamp(16px,4vw,32px) clamp(56px,9vw,90px)">
+    <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(28px,5vw,42px);letter-spacing:-0.02em;margin:0">Ponuda nekretnina</h1>
+    <p style="font-size:16.5px;color:#6B7280;margin:10px 0 32px">{{ countLabel }}</p>
+
+    <div style="padding:20px;border:1px solid #E7E9EC;border-radius:12px;background:#F7F8F9;margin-bottom:16px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px;align-items:end;min-width:0">
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Namena
+          <select value="{{ namena }}" onChange="{{ onNamena }}" style="min-width:0;padding:10px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff"><option value="Sve">Prodaja i izdavanje</option><option value="Prodaja">Prodaja</option><option value="Izdavanje">Izdavanje</option></select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Tip
+          <select value="{{ f.tip }}" onChange="{{ onTip }}" style="min-width:0;padding:10px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff">
+            <sc-for list="{{ tipovi }}" as="o" hint-placeholder-count="4"><option value="{{ o }}">{{ o }}</option></sc-for>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Lokacija
+          <select value="{{ f.lokacija }}" onChange="{{ onLokacija }}" style="min-width:0;padding:10px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff">
+            <sc-for list="{{ lokacije }}" as="o" hint-placeholder-count="6"><option value="{{ o }}">{{ o }}</option></sc-for>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Cena od / do (€)
+          <div style="display:flex;gap:6px;min-width:0"><input value="{{ f.cenaOd }}" onChange="{{ onCenaOd }}" placeholder="od" style="min-width:0;width:100%;padding:10px;border:1px solid #E7E9EC;border-radius:8px"><input value="{{ f.cenaDo }}" onChange="{{ onCenaDo }}" placeholder="do" style="min-width:0;width:100%;padding:10px;border:1px solid #E7E9EC;border-radius:8px"></div>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">m² od / do
+          <div style="display:flex;gap:6px;min-width:0"><input value="{{ f.m2Od }}" onChange="{{ onM2Od }}" placeholder="od" style="min-width:0;width:100%;padding:10px;border:1px solid #E7E9EC;border-radius:8px"><input value="{{ f.m2Do }}" onChange="{{ onM2Do }}" placeholder="do" style="min-width:0;width:100%;padding:10px;border:1px solid #E7E9EC;border-radius:8px"></div>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;min-width:0">Sobe
+          <select value="{{ f.sobe }}" onChange="{{ onSobe }}" style="min-width:0;padding:10px 12px;border:1px solid #E7E9EC;border-radius:8px;background:#fff">
+            <sc-for list="{{ sobeOpcije }}" as="o" hint-placeholder-count="7"><option value="{{ o }}">{{ o }}</option></sc-for>
+          </select>
+        </label>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;margin-top:16px;padding-top:16px;border-top:1px solid #E7E9EC;flex-wrap:wrap">
+        <label style="display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;cursor:pointer">
+          <input type="checkbox" checked="{{ f.novogradnja }}" onChange="{{ onNovogradnja }}" style="width:17px;height:17px;accent-color:#2F9E44"> Samo novogradnja
+        </label>
+        <div style="display:flex;gap:10px;margin-left:auto">
+          <button onClick="{{ resetFilters }}" style="padding:12px 20px;border-radius:8px;border:1px solid #E7E9EC;background:#fff;color:#14161A;font-weight:600;font-size:14.5px;cursor:pointer" style-hover="border-color:#14161A">Poništi</button>
+          <button onClick="{{ applyFilters }}" style="padding:12px 28px;border-radius:8px;border:none;background:#2F9E44;color:#fff;font-weight:600;font-size:14.5px;cursor:pointer" style-hover="background:#248036">Pretraži</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:28px">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+        <button onClick="{{ t.onClick }}" style="padding:10px 18px;border-radius:100px;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.fg }};font-weight:600;font-size:14px;cursor:pointer">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ nemaRezultata }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px dashed #E7E9EC;border-radius:12px;padding:56px;text-align:center">
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px">Nema nekretnina po ovim kriterijumima</div>
+        <p style="font-size:15.5px;color:#6B7280;margin:10px 0 0">Proširite kriterijume ili nas pozovite, deo ponude nije javno oglašen.</p>
+      </div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px">
+      <sc-for list="{{ filtered }}" as="l" hint-placeholder-count="0">
+        <div onClick="{{ l.open }}" style="border:1px solid #E7E9EC;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;transition:box-shadow .2s,transform .2s" style-hover="box-shadow:0 16px 40px rgba(10,12,15,0.12);transform:translateY(-3px)">
+          <div style="position:relative;height:210px">
+            {{ l.img }}
+            <div style="position:absolute;top:12px;left:12px;display:flex;gap:6px;pointer-events:none">
+              <span style="background:#14161A;color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ l.namena }}</span>
+              <span style="background:{{ l.badgeColor }};color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ l.badge }}</span>
+            </div>
+          </div>
+          <div style="padding:18px 18px 20px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+              <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.01em">{{ l.cena }}</span>
+              <span style="font-size:13px;color:#6B7280">{{ l.cenaM2 }}</span>
+            </div>
+            <div style="font-weight:600;font-size:16px;margin-top:10px">{{ l.naslov }}</div>
+            <div style="font-size:14px;color:#6B7280;margin-top:3px">{{ l.naselje }}, Pančevo</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid #E7E9EC">
+              <span style="font-size:12.5px;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.kvadratura }}</span>
+              <span style="font-size:12.5px;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.sobe }}</span>
+              <span style="font-size:12.5px;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.sprat }}</span>
+              <span style="font-size:12.5px;background:#F7F8F9;padding:5px 10px;border-radius:6px">{{ l.grejanje }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ======================= DETALJ ======================= -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:32px clamp(16px,4vw,32px) clamp(56px,9vw,90px)">
+    <a href="#ponuda" onClick="{{ goOffer }}" style="font-size:14px;color:#6B7280" style-hover="color:#2F9E44">← Nazad na ponudu</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:20px">
+      <div style="aspect-ratio:3/2;min-width:0;min-height:0">{{ d.foto1Img }}</div>
+      <div style="display:grid;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:12px;min-width:0;min-height:0;aspect-ratio:3/2">
+        {{ d.foto2Img }}
+        {{ d.foto3Img }}
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,56px);margin-top:44px">
+      <div style="min-width:0">
+        <div style="display:flex;gap:8px">
+          <span style="background:#14161A;color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ d.namena }}</span>
+          <span style="background:{{ d.badgeColor }};color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 10px;border-radius:5px">{{ d.badge }}</span>
+        </div>
+        <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(26px,4.4vw,38px);letter-spacing:-0.02em;margin:16px 0 6px">{{ d.naslov }}</h1>
+        <div style="font-size:16.5px;color:#6B7280">{{ d.lokacija }}</div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:#E7E9EC;border:1px solid #E7E9EC;border-radius:12px;overflow:hidden;margin-top:32px">
+          <sc-for list="{{ d.spec }}" as="s" hint-placeholder-count="6">
+            <div style="background:#fff;padding:20px;min-width:0"><div style="font-size:12.5px;color:#6B7280;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">{{ s.k }}</div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;margin-top:6px">{{ s.v }}</div></div>
+          </sc-for>
+        </div>
+
+        <h2 style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;margin:44px 0 12px">Opis</h2>
+        <sc-for list="{{ d.opis }}" as="t" hint-placeholder-count="2">
+          <p style="font-size:16.5px;line-height:1.7;color:#4B5158;margin:0 0 14px;max-width:66ch">{{ t }}</p>
+        </sc-for>
+
+        <h2 style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;margin:44px 0 14px">Detalji</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px 40px;max-width:620px">
+          <sc-for list="{{ d.detalji }}" as="row" hint-placeholder-count="8">
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #E7E9EC;font-size:15px;min-width:0">
+              <span style="color:#6B7280">{{ row.k }}</span><span style="font-weight:600">{{ row.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <aside style="align-self:start;position:sticky;top:110px;border:1px solid #E7E9EC;border-radius:14px;padding:26px;box-shadow:0 8px 30px rgba(10,12,15,0.06)">
+        <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em">{{ d.cena }}</div>
+        <div style="font-size:14px;color:#6B7280;margin-top:4px">{{ d.cenaNota }}</div>
+        <div style="height:1px;background:#E7E9EC;margin:22px 0"></div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="./logo.jpg" alt="Broker Nekretnine" style="width:52px;height:52px;border-radius:50%;object-fit:contain;background:#fff;border:1px solid #E7E9EC;flex:none">
+          <div><div style="font-weight:600;font-size:15px">Broker Nekretnine</div><div style="font-size:13.5px;color:#6B7280">Karađorđeva 2a, Pančevo</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px">
+          <a href="tel:0645285000" style="text-align:center;background:#2F9E44;color:#fff;padding:14px;border-radius:8px;font-weight:600" style-hover="background:#248036;color:#fff">Pozovi 064 52 85 000</a>
+          <a href="https://wa.me/381645285000" style="text-align:center;border:1px solid #E7E9EC;color:#14161A;padding:14px;border-radius:8px;font-weight:600" style-hover="border-color:#14161A;background:#F7F8F9">WhatsApp</a>
+        </div>
+        <textarea placeholder="{{ d.upit }}" rows="3" style="width:100%;margin-top:14px;padding:12px;border:1px solid #E7E9EC;border-radius:8px;resize:vertical"></textarea>
+        <button style="width:100%;margin-top:10px;background:#14161A;color:#fff;border:none;padding:13px;border-radius:8px;font-weight:600;cursor:pointer">Pošalji upit</button>
+        <div style="font-size:12.5px;color:#6B7280;margin-top:14px;line-height:1.5">ID oglasa: {{ d.oglasId }} · Agencija upisana u Registar posrednika pod brojem 1436.</div>
+      </aside>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ======================= PRODAJ KROZ NAS ======================= -->
+  <sc-if value="{{ isSell }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px) 0">
+      <div style="max-width:720px">
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#F08C1E">Za prodavce i vlasnike</div>
+        <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(30px,5.4vw,46px);line-height:1.1;letter-spacing:-0.02em;margin:12px 0 16px;text-wrap:balance">Prodajte ili izdajte stan kroz nas</h1>
+        <p style="font-size:clamp(15.5px,2vw,18px);line-height:1.65;color:#4B5158;margin:0">Vodimo posao od početka do kraja. Vi donosite odluke, mi obavljamo posao: obilaske, pregovore, dokumentaciju i koordinaciju sa advokatom i notarom.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,56px) clamp(16px,4vw,32px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+          <div style="border-top:2px solid #E7E9EC;padding-top:20px">
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:{{ s.color }};letter-spacing:0.1em">{{ s.num }}</div>
+            <h3 style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;margin:10px 0 8px">{{ s.title }}</h3>
+            <p style="font-size:15px;line-height:1.6;color:#6B7280;margin:0">{{ s.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#F7F8F9;border-top:1px solid #E7E9EC;border-bottom:1px solid #E7E9EC">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,72px) clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,64px)">
+        <div style="min-width:0">
+          <h2 style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em;margin:0 0 14px">Provizija i šta je uključeno</h2>
+          <p style="font-size:16.5px;line-height:1.65;color:#4B5158;margin:0 0 18px">Provizija se ugovara po nekretnini i plaća se samo po uspešno realizovanoj prodaji ili izdavanju. Bez skrivenih troškova i bez naplate unaprijed.</p>
+          <div style="background:#fff;border:1px solid #E7E9EC;border-radius:12px;padding:22px">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#6B7280;margin-bottom:12px">U provizu ulazi</div>
+            <sc-for list="{{ included }}" as="i" hint-placeholder-count="6">
+              <div style="display:flex;gap:12px;padding:9px 0;font-size:15.5px;align-items:baseline">
+                <span style="color:#2F9E44;font-weight:700">✓</span><span>{{ i }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em;margin:0 0 14px">Iskustva klijenata</h2>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+              <div style="background:#fff;border:1px solid #E7E9EC;border-radius:12px;padding:22px">
+                <div style="color:#F08C1E;font-size:14px;letter-spacing:2px">★★★★★</div>
+                <p style="font-size:16px;line-height:1.6;color:#14161A;margin:12px 0 14px">{{ r.text }}</p>
+                <div style="font-size:14px;color:#6B7280">{{ r.name }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <!-- ======================= O NAMA ======================= -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+      <div style="min-width:0">
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#E03131">Ko smo mi</div>
+        <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:12px 0 18px">Agencija iz Pančeva, za Pančevo</h1>
+        <p style="font-size:clamp(15.5px,2vw,17.5px);line-height:1.65;color:#4B5158;margin:0 0 14px">Broker Nekretnine posreduje u prodaji i izdavanju stanova, kuća i poslovnih prostora u Pančevu i okolini. Radimo iz dve kancelarije, u Karađorđevoj i Njegoševoj.</p>
+        <p style="font-size:clamp(15.5px,2vw,17.5px);line-height:1.65;color:#4B5158;margin:0">Upisani smo u Registar posrednika u prometu nepokretnosti pod brojem 1436, što znači da svaki ugovor koji potpišete sa nama ima zakonski okvir i osiguranje od profesionalne odgovornosti.</p>
+      </div>
+      <div style="aspect-ratio:4/5;max-height:400px;min-width:0"><img src="slike/about-hero.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:14px;background:#F1F2F4"></div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:clamp(44px,8vw,72px) clamp(16px,4vw,32px)">
+      <h2 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(24px,3.6vw,34px);letter-spacing:-0.02em;margin:0 0 28px">Tim</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:24px">
+        <sc-for list="{{ team }}" as="t" hint-placeholder-count="0">
+          <div style="min-width:0">
+            <div style="aspect-ratio:3/4;min-width:0">{{ t.img }}</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;margin-top:14px">{{ t.name }}</div>
+            <div style="font-size:14px;color:#6B7280;margin-top:2px">{{ t.role }}</div>
+            <div style="font-size:14px;color:#2F9E44;margin-top:6px">{{ t.phone }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-size:14px;color:#6B7280;margin-top:22px">Imena i pozicije su placeholderi, pošaljite prave podatke i zamenićemo ih.</p>
+    </section>
+
+    <section style="background:#14161A">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(20px,3vw,32px)">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:-0.02em">{{ s.value }}</div>
+            <div style="font-size:14.5px;color:rgba(255,255,255,0.65);margin-top:6px">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ======================= VODIČI ======================= -->
+  <sc-if value="{{ isBlog }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px) clamp(56px,9vw,90px)">
+    <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:44px;letter-spacing:-0.02em;margin:0">Vodiči i objašnjenja</h1>
+    <p style="font-size:clamp(15.5px,2vw,17px);color:#6B7280;margin:12px 0 40px;max-width:60ch">Pitanja koja nam klijenti najčešće postavljaju, odgovorena bez pravničkog jezika.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:28px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="0">
+        <div onClick="{{ p.open }}" style="cursor:pointer;min-width:0" style-hover="opacity:0.85">
+          <div style="aspect-ratio:3/2;min-width:0">{{ p.img }}</div>
+          <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:{{ p.color }};margin-top:16px">{{ p.tag }}</div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;line-height:1.3;margin:8px 0 8px">{{ p.title }}</h3>
+          <p style="font-size:15px;line-height:1.6;color:#6B7280;margin:0">{{ p.excerpt }}</p>
+          <div style="font-size:14px;font-weight:600;color:#2F9E44;margin-top:12px">Pročitaj ceo tekst →</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ======================= VODIČ (TEKST) ======================= -->
+  <sc-if value="{{ isArticle }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:32px clamp(16px,4vw,32px) clamp(56px,9vw,90px)">
+    <a href="#vodici" onClick="{{ goBlog }}" style="font-size:14px;color:#6B7280" style-hover="color:#2F9E44">← Nazad na vodiče</a>
+    <div style="max-width:760px;margin-top:28px">
+      <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:{{ a.color }}">{{ a.tag }}</div>
+      <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.12;letter-spacing:-0.02em;margin:12px 0 16px;text-wrap:balance">{{ a.title }}</h1>
+      <p style="font-size:clamp(16.5px,2.2vw,19px);line-height:1.6;color:#4B5158;margin:0">{{ a.excerpt }}</p>
+    </div>
+    <div style="aspect-ratio:16/7;margin:32px 0 8px;max-width:1000px">{{ a.img }}</div>
+    <div style="max-width:70ch;margin-top:32px">
+      <sc-for list="{{ a.sadrzaj }}" as="sec" hint-placeholder-count="4">
+        <div style="margin-bottom:8px">
+          <sc-if value="{{ sec.podnaslov }}" hint-placeholder-val="{{ true }}">
+            <h2 style="font-family:Archivo,sans-serif;font-weight:600;font-size:clamp(20px,2.6vw,24px);margin:32px 0 12px">{{ sec.podnaslov }}</h2>
+          </sc-if>
+          <sc-for list="{{ sec.pasusi }}" as="t" hint-placeholder-count="2">
+            <p style="font-size:17px;line-height:1.75;color:#4B5158;margin:0 0 16px;text-wrap:pretty">{{ t }}</p>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width:70ch;margin-top:40px;padding:26px;border:1px solid #E7E9EC;border-radius:12px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px">Imate pitanje o svom slučaju?</div>
+        <div style="font-size:15px;color:#6B7280;margin-top:4px">Pozovite nas, prolazimo kroz situaciju bez obaveze.</div>
+      </div>
+      <a href="tel:0645285000" style="background:#2F9E44;color:#fff;padding:13px 22px;border-radius:8px;font-weight:600;white-space:nowrap" style-hover="background:#248036;color:#fff">064 52 85 000</a>
+    </div>
+    <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:28px">
+      <sc-for list="{{ ostaliVodici }}" as="p" hint-placeholder-count="3">
+        <div onClick="{{ p.open }}" style="cursor:pointer;min-width:0;border-top:2px solid #E7E9EC;padding-top:16px" style-hover="opacity:0.85">
+          <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:{{ p.color }}">{{ p.tag }}</div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;line-height:1.35;margin:8px 0 0">{{ p.title }}</h3>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ======================= KONTAKT ======================= -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px) clamp(56px,9vw,90px)">
+    <h1 style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(28px,5vw,44px);letter-spacing:-0.02em;margin:0 0 40px">Kontakt</h1>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,56px)">
+      <div style="min-width:0">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:20px">
+          <div style="border:1px solid #E7E9EC;border-radius:12px;padding:24px">
+            <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#2F9E44">Kancelarija 1</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;margin-top:10px">Karađorđeva 2a</div>
+            <div style="font-size:15px;color:#6B7280;margin-top:4px">26000 Pančevo</div>
+          </div>
+          <div style="border:1px solid #E7E9EC;border-radius:12px;padding:24px">
+            <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#F08C1E">Kancelarija 2</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;margin-top:10px">Njegoševa 10a</div>
+            <div style="font-size:15px;color:#6B7280;margin-top:4px">26000 Pančevo</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E7E9EC"><span style="color:#6B7280">Telefon</span><a href="tel:0645285000" style="font-weight:600">064 52 85 000</a></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E7E9EC"><span style="color:#6B7280">WhatsApp / Viber</span><a href="https://wa.me/381645285000" style="font-weight:600">+381 64 52 85 000</a></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #E7E9EC"><span style="color:#6B7280">Mail</span><span style="font-weight:600">{{ mail }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E7E9EC"><span style="color:#6B7280">Radno vreme</span><span style="font-weight:600;color:#6B7280">dopuniti</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E7E9EC"><span style="color:#6B7280">Reg. posrednika</span><span style="font-weight:600">1436</span></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:26px">
+          <a href="https://www.instagram.com/broker.nekretnine" style="border:1px solid #E7E9EC;padding:11px 18px;border-radius:8px;color:#14161A;font-weight:600;font-size:14px" style-hover="border-color:#14161A;background:#F7F8F9">Instagram</a>
+          <a href="https://www.tiktok.com/@brokernekretninepancevo" style="border:1px solid #E7E9EC;padding:11px 18px;border-radius:8px;color:#14161A;font-weight:600;font-size:14px" style-hover="border-color:#14161A;background:#F7F8F9">TikTok</a>
+          <a href="#facebook" style="border:1px solid #E7E9EC;padding:11px 18px;border-radius:8px;color:#14161A;font-weight:600;font-size:14px" style-hover="border-color:#14161A;background:#F7F8F9">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <form onSubmit="{{ sendMail }}" style="border:1px solid #E7E9EC;border-radius:14px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;min-width:0;box-shadow:0 8px 30px rgba(10,12,15,0.06)">
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;margin-bottom:6px">Pošaljite upit</div>
+          <input required="{{ true }}" value="{{ k.ime }}" onChange="{{ onIme }}" placeholder="Ime i prezime" style="min-width:0;padding:13px 14px;border:1px solid #E7E9EC;border-radius:8px">
+          <input required="{{ true }}" value="{{ k.telefon }}" onChange="{{ onTelefon }}" placeholder="Telefon" style="min-width:0;padding:13px 14px;border:1px solid #E7E9EC;border-radius:8px">
+          <input type="email" value="{{ k.mail }}" onChange="{{ onMail }}" placeholder="Mail" style="min-width:0;padding:13px 14px;border:1px solid #E7E9EC;border-radius:8px">
+          <select value="{{ k.tema }}" onChange="{{ onTema }}" style="min-width:0;padding:13px 14px;border:1px solid #E7E9EC;border-radius:8px;background:#fff"><option>Tražim stan za kupovinu</option><option>Tražim stan za izdavanje</option><option>Prodajem nekretninu</option><option>Izdajem nekretninu</option><option>Nešto drugo</option></select>
+          <textarea rows="5" value="{{ k.poruka }}" onChange="{{ onPoruka }}" placeholder="Vaša poruka" style="padding:13px 14px;border:1px solid #E7E9EC;border-radius:8px;resize:vertical"></textarea>
+          <button type="submit" style="background:#2F9E44;color:#fff;border:none;padding:15px;border-radius:8px;font-weight:600;cursor:pointer;font-size:15px">Pošalji</button>
+          <div style="font-size:13px;color:{{ statusBoja }};line-height:1.5">{{ statusTekst }}</div>
+        </form>
+        <div style="aspect-ratio:16/9;margin-top:20px;min-width:0"><iframe title="Karađorđeva 2a, Pančevo" src="https://maps.google.com/maps?q=Kara%C4%91or%C4%91eva%202a%2C%20Pan%C4%8Devo%2026000%2C%20Srbija&z=16&output=embed" loading="lazy" style="display:block;width:100%;height:100%;border:0;border-radius:12px"></iframe></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  </main>
+
+  <footer style="background:#0F1114;color:rgba(255,255,255,0.7);margin-top:auto">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,32px) 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:clamp(28px,4vw,48px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="./logo.jpg" alt="Broker Nekretnine" style="width:40px;height:40px;object-fit:contain;border-radius:8px">
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:#fff">BROKER NEKRETNINE</span>
+        </div>
+        <p style="font-size:14.5px;line-height:1.6;margin:16px 0 0;max-width:34ch">Posredovanje u prodaji i izdavanju nekretnina u Pančevu. Upisani u Registar posrednika pod brojem 1436.</p>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin-bottom:14px">Sajt</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <sc-for list="{{ nav }}" as="item" hint-placeholder-count="6">
+            <a href="{{ item.href }}" onClick="{{ item.onClick }}" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">{{ item.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin-bottom:14px">Kontakt</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <a href="tel:0645285000" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">064 52 85 000</a>
+          <span>Karađorđeva 2a</span>
+          <span>Njegoševa 10a</span>
+          <span>26000 Pančevo</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin-bottom:14px">Mreže</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <a href="https://www.instagram.com/broker.nekretnine" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">Instagram</a>
+          <a href="https://www.tiktok.com/@brokernekretninepancevo" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">TikTok</a>
+          <a href="https://wa.me/381645285000" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">WhatsApp</a>
+          <a href="viber://chat?number=%2B381645285000" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">Viber</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;padding:22px clamp(16px,4vw,32px) 40px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;gap:24px;font-size:13.5px;flex-wrap:wrap">
+      <span>© 2026 Broker Nekretnine Pančevo. PIB i matični broj: dopuniti</span>
+      <div style="display:flex;gap:22px">
+        <a href="#privatnost" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">Politika privatnosti</a>
+        <a href="#uslovi" style="color:rgba(255,255,255,0.7)" style-hover="color:#fff">Uslovi korišćenja</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const POSTS = [
+        { slot:"p1", tag:"Troškovi", color:"#E03131", title:"Porez na prenos apsolutnih prava: 2,5%", excerpt:"Ko ga plaća, kada dolazi rešenje i u kojim slučajevima kupac prvog stana može biti oslobođen." },
+        { slot:"p2", tag:"Kupovina", color:"#2F9E44", title:"Spisak troškova kupovine stana", excerpt:"Overa, taksе, provizija i porezi: sve što na ceni stana dođe kao dodatak." },
+        { slot:"p3", tag:"Tržište", color:"#F08C1E", title:"Novogradnja u Pančevu", excerpt:"Šta se gradi, u kojim naseljima i na šta gledati pri kupovini stana u izgradnji." },
+        { slot:"p4", tag:"Kredit", color:"#2F9E44", title:"Kako se računa stambeni kredit", excerpt:"Učešće, kamata, osiguranje i procena, od prijave do isplate prodavcu." },
+        { slot:"p5", tag:"Izdavanje", color:"#F08C1E", title:"Ugovor o zakupu koji vas štiti", excerpt:"Depozit, popis stanja, otkazni rok i prijava zakupca: obaveze vlasnika u praksi." },
+        { slot:"p6", tag:"Prodaja", color:"#E03131", title:"Kako pripremiti stan za obilaske", excerpt:"Male stvari koje utiču na prvu reakciju kupca i na konačnu cenu." }
+];
+
+const LISTINGS = [
+  { slot:"l1", naslov:"Trosoban stan, Centar", naselje:"Centar", namena:"Prodaja", cena:"118.000 €", cenaM2:"1.639 €/m²", kvadratura:"72 m²", sobe:"3 sobe", sprat:"3/5", grejanje:"Gradsko", badge:"Novo", badgeColor:"#F08C1E" },
+  { slot:"l2", naslov:"Dvosoban stan, Strelište", naselje:"Strelište", namena:"Prodaja", cena:"78.000 €", cenaM2:"1.444 €/m²", kvadratura:"54 m²", sobe:"2 sobe", sprat:"2/4", grejanje:"Gradsko", badge:"Uknjižen", badgeColor:"#2F9E44" },
+  { slot:"l3", naslov:"Garsonjera, Kotež", naselje:"Kotež", namena:"Izdavanje", cena:"250 € / mesec", cenaM2:"8,9 €/m²", kvadratura:"28 m²", sobe:"Garsonjera", sprat:"1/5", grejanje:"Etažno", badge:"Odmah useljivo", badgeColor:"#2F9E44" },
+  { slot:"l4", naslov:"Četvorosoban penthouse, Nova Misa", naselje:"Nova Misa", namena:"Prodaja", cena:"165.000 €", cenaM2:"1.684 €/m²", kvadratura:"98 m²", sobe:"4 sobe", sprat:"5/5", grejanje:"Gradsko", badge:"Novogradnja", badgeColor:"#F08C1E" },
+  { slot:"l5", naslov:"Jednoiposoban stan, Tesla", naselje:"Tesla", namena:"Izdavanje", cena:"320 € / mesec", cenaM2:"7,8 €/m²", kvadratura:"41 m²", sobe:"1,5 soba", sprat:"4/6", grejanje:"Gradsko", badge:"Namešten", badgeColor:"#2F9E44" },
+  { slot:"l6", naslov:"Dvoiposoban stan, Sodara", naselje:"Sodara", namena:"Prodaja", cena:"94.500 €", cenaM2:"1.500 €/m²", kvadratura:"63 m²", sobe:"2,5 sobe", sprat:"1/4", grejanje:"TA peć", badge:"Sniženo", badgeColor:"#E03131" }
+];
+
+class Component extends DCLogic {
+  emptyFilters = { tip: "Svi tipovi", lokacija: "Sva naselja", cenaOd: "", cenaDo: "", m2Od: "", m2Do: "", sobe: "Sve", novogradnja: false };
+
+  state = { page: "home", tab: "Sve", stanovi: LISTINGS, vodici: POSTS, otvoreniVodic: null, draft: this.emptyFilters, applied: this.emptyFilters, status: "" };
+
+  setF = (k) => (e) => {
+    const v = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    this.setState(s => ({ draft: { ...s.draft, [k]: v } }));
+  };
+
+  componentDidMount() {
+    fetch("./stanovi.json", { cache: "no-store" })
+      .then(r => r.json())
+      .then(d => {
+        if (Array.isArray(d && d.stanovi) && d.stanovi.length) this.setState({ stanovi: d.stanovi });
+      })
+      .catch(() => {});
+    fetch("./vodici.json", { cache: "no-store" })
+      .then(r => r.json())
+      .then(d => {
+        if (Array.isArray(d && d.vodici) && d.vodici.length) this.setState({ vodici: d.vodici });
+      })
+      .catch(() => {});
+  }
+
+  go = (p) => (e) => { if (e) e.preventDefault(); this.setState({ page: p }); window.scrollTo(0, 0); };
+
+  // Mail adresa agencije
+  static MAIL = "kontakt@brokernekretnine.rs";
+  // Formspree: napravi formu na formspree.io i ovde upisi svoj endpoint
+  // (Formspree > New form > kopiraj adresu tipa https://formspree.io/f/abcdwxyz)
+  static FORMSPREE = "https://formspree.io/f/VAS-FORM-ID";
+
+  setK = (key) => (e) => {
+    const v = e.target.value;
+    this.setState(s => ({ kontakt: { ...(s.kontakt || {}), [key]: v } }));
+  };
+
+  sendMail = (e) => {
+    e.preventDefault();
+    const k = this.state.kontakt || {};
+    const tema = k.tema || "Tražim stan za kupovinu";
+    const podaci = {
+      ime: k.ime || "", telefon: k.telefon || "", mail: k.mail || "",
+      tema: tema, poruka: k.poruka || "",
+      _subject: "Upit sa sajta: " + tema
+    };
+    const url = Component.FORMSPREE;
+    if (url.indexOf("VAS-FORM-ID") !== -1) {
+      const telo = ["Ime i prezime: " + podaci.ime, "Telefon: " + podaci.telefon,
+        "Mail: " + podaci.mail, "Tema: " + tema, "", podaci.poruka].join("\n");
+      window.location.href = "mailto:" + Component.MAIL +
+        "?subject=" + encodeURIComponent(podaci._subject) +
+        "&body=" + encodeURIComponent(telo);
+      return;
+    }
+    this.setState({ status: "slanje" });
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(podaci)
+    })
+      .then(r => {
+        if (!r.ok) throw new Error("greska");
+        this.setState({ status: "ok", kontakt: { ime: "", telefon: "", mail: "", tema: tema, poruka: "" } });
+      })
+      .catch(() => this.setState({ status: "greska" }));
+  };
+
+  dimg(name) {
+    return React.createElement("img", { src: "slike/" + name + ".jpg", alt: "", style: { display: "block", width: "100%", height: "100%", objectFit: "cover", borderRadius: 12, background: "#F1F2F4" } });
+  }
+
+  clanak(list) {
+    const a = list.find(p => p.slot === this.state.otvoreniVodic) || list[0] || {};
+    return { ...a, slotImg: a.slot ? this.dimg(a.slot) : null, sadrzaj: a.sadrzaj || [{ podnaslov: "", pasusi: [a.excerpt || ""] }] };
+  }
+
+  detalj(all) {
+    const l = all.find(s => s.slot === this.state.izabrani) || all[0];
+    if (!l) return {};
+    const izdavanje = l.namena === "Izdavanje";
+    return {
+      ...l,
+      lokacija: l.naselje + ", Pančevo",
+      foto1Img: this.dimg(l.slot + "-1"), foto2Img: this.dimg(l.slot + "-2"), foto3Img: this.dimg(l.slot + "-3"),
+      cenaNota: izdavanje ? "Mesečna kirija, bez troškova" : "Cena bez poreza na prenos",
+      upit: izdavanje ? "Zanima me ovaj stan za izdavanje, kada je moguć obilazak?" : "Zanima me ovaj stan, kada je moguć obilazak?",
+      spec: [
+        { k: "Kvadratura", v: l.kvadratura },
+        { k: "Broj soba", v: l.sobe },
+        { k: "Sprat", v: l.sprat },
+        { k: "Grejanje", v: l.grejanje },
+        { k: izdavanje ? "Cena po m²" : "Cena po m²", v: l.cenaM2 },
+        { k: "Namena", v: l.namena }
+      ]
+    };
+  }
+
+  renderVals() {
+    const { page, tab, stanovi, draft, applied } = this.state;
+    const all = stanovi || [];
+    const num = (v) => { const n = parseFloat(String(v).replace(/[^\d.,]/g, "").replace(",", ".")); return isNaN(n) ? null : n; };
+    const mkImg = (name, r) => React.createElement("img", { src: "slike/" + name + ".jpg", alt: "", style: { display: "block", width: "100%", height: "100%", objectFit: "cover", borderRadius: r, background: "#F1F2F4" } });
+    const withImg = (arr, r) => arr.map(o => ({ ...o, img: mkImg(o.slot, r) }));
+    const vodiciList = (this.state.vodici || []).map(p => ({
+      ...p,
+      img: mkImg(p.slot, 12),
+      open: () => { this.setState({ page: "article", otvoreniVodic: p.slot }); window.scrollTo(0, 0); }
+    }));
+    const open = (l) => () => { this.setState({ page: "detail", izabrani: l.slot }); window.scrollTo(0, 0); };
+    const withOpen = (arr) => arr.map(l => ({ ...l, open: open(l) }));
+    const uniq = (key, label) => [label].concat(all.map(l => l[key]).filter(Boolean).filter((v, i, a) => a.indexOf(v) === i));
+    const navItems = [
+      ["Početna", "home", "#pocetna"], ["Ponuda", "offer", "#ponuda"], ["Prodaj kroz nas", "sell", "#prodaj"],
+      ["O nama", "about", "#o-nama"], ["Vodiči", "blog", "#vodici"], ["Kontakt", "contact", "#kontakt"]
+    ];
+    const cenaOd = num(applied.cenaOd), cenaDo = num(applied.cenaDo);
+    const m2Od = num(applied.m2Od), m2Do = num(applied.m2Do);
+    const sobeMin = applied.sobe === "4+" ? 4 : num(applied.sobe);
+    const filtered = all.filter(l => {
+      if (tab !== "Sve" && l.namena !== tab) return false;
+      if (applied.tip !== "Svi tipovi" && (l.tip || "Stan") !== applied.tip) return false;
+      if (applied.lokacija !== "Sva naselja" && l.naselje !== applied.lokacija) return false;
+      const c = l.cenaBroj != null ? l.cenaBroj : num(l.cena);
+      if (cenaOd != null && (c == null || c < cenaOd)) return false;
+      if (cenaDo != null && (c == null || c > cenaDo)) return false;
+      const kv = l.m2 != null ? l.m2 : num(l.kvadratura);
+      if (m2Od != null && (kv == null || kv < m2Od)) return false;
+      if (m2Do != null && (kv == null || kv > m2Do)) return false;
+      if (applied.sobe !== "Sve" && sobeMin != null) {
+        const sb = l.sobeBroj != null ? l.sobeBroj : num(l.sobe);
+        if (sb == null) return false;
+        if (applied.sobe === "4+" ? sb < 4 : sb !== sobeMin) return false;
+      }
+      if (applied.novogradnja && !l.novogradnja) return false;
+      return true;
+    });
+
+    return {
+      isHome: page === "home", isOffer: page === "offer", isDetail: page === "detail",
+      isSell: page === "sell", isAbout: page === "about", isBlog: page === "blog", isContact: page === "contact",
+      goHome: this.go("home"), goOffer: this.go("offer"), goDetail: this.go("detail"), goSell: this.go("sell"),
+      noop: (e) => e.preventDefault(),
+      nav: navItems.map(([label, key, href]) => ({ label, href, onClick: this.go(key) })),
+      homeListings: withImg(withOpen(all.slice(0, 3)), 0),
+      filtered: withImg(withOpen(filtered), 0),
+      d: this.detalj(all),
+      countLabel: filtered.length + " od " + all.length + " nekretnina · Pančevo i okolina",
+      nemaRezultata: filtered.length === 0,
+      f: draft,
+      tipovi: uniq("tip", "Svi tipovi"),
+      lokacije: uniq("naselje", "Sva naselja"),
+      sobeOpcije: ["Sve", "1", "1.5", "2", "2.5", "3", "4+"],
+      onTip: this.setF("tip"), onLokacija: this.setF("lokacija"),
+      onCenaOd: this.setF("cenaOd"), onCenaDo: this.setF("cenaDo"),
+      onM2Od: this.setF("m2Od"), onM2Do: this.setF("m2Do"),
+      onSobe: this.setF("sobe"), onNovogradnja: this.setF("novogradnja"),
+      namena: tab,
+      onNamena: (e) => this.setState({ tab: e.target.value }),
+      applyFilters: () => this.setState(s => ({ applied: s.draft })),
+      searchAndGo: () => { this.setState(s => ({ applied: s.draft, page: "offer" })); window.scrollTo(0, 0); },
+      resetFilters: () => this.setState({ draft: this.emptyFilters, applied: this.emptyFilters, tab: "Sve" }),
+      tabs: ["Sve", "Prodaja", "Izdavanje"].map(t => ({
+        label: t, onClick: () => this.setState({ tab: t }),
+        bg: tab === t ? "#14161A" : "#fff", fg: tab === t ? "#fff" : "#14161A",
+        border: tab === t ? "#14161A" : "#E7E9EC"
+      })),
+      stats: [
+        { value: "1436", label: "Registar posrednika" },
+        { value: "2", label: "Kancelarije u Pančevu" },
+        { value: "XXX", label: "Završenih transakcija" },
+        { value: "XX", label: "Godina rada" }
+      ],
+      services: [
+        { color:"#2F9E44", title:"Prodaja stanova", text:"Od procene cene i fotografisanja do overe ugovora. Oglas dobija pravu publiku, a vi jednu kontakt osobu kroz ceo proces." },
+        { color:"#F08C1E", title:"Izdavanje", text:"Provera zakupaca, ugovor o zakupu, popis stanja i predaja ključeva. Radimo i za vlasnike koji ne žive u Pančevu." },
+        { color:"#E03131", title:"Dokumentacija", text:"Uknjižba, izvod iz katastra, poreske prijave i saradnja sa advokatom i notarom, bez šetanja po institucijama." }
+      ],
+      steps: [
+        { num:"01", color:"#2F9E44", title:"Izlazak i procena", text:"Obilazimo nekretninu, snimamo stanje i dajemo realnu cenu na osnovu ostvarenih prodaja u istom naselju." },
+        { num:"02", color:"#2F9E44", title:"Ugovor o posredovanju", text:"Jasno definisana provizija, rok i obaveze. Bez naplate unaprijed." },
+        { num:"03", color:"#F08C1E", title:"Priprema oglasa", text:"Profesionalne fotografije, opis i plan nekretnine. Oglas ide na sajt, Instagram, TikTok i portale." },
+        { num:"04", color:"#F08C1E", title:"Obilasci i selekcija", text:"Kupce filtriramo pre obilaska, vodimo ih kroz stan i javljamo vam povratne informacije nakon svakog termina." },
+        { num:"05", color:"#E03131", title:"Pregovori", text:"Vodimo razgovor o ceni i uslovima, vi donosite odluku sa svim brojevima na stolu." },
+        { num:"06", color:"#E03131", title:"Ugovor i predaja", text:"Koordinacija sa advokatom, notarom i bankom kupca, do overe i predaje ključeva." }
+      ],
+      included: [
+        "Procena tržišne vrednosti nekretnine",
+        "Profesionalno fotografisanje i priprema oglasa",
+        "Oglašavanje na sajtu, portalima i našim mrežama",
+        "Organizacija i vođenje svih obilazaka",
+        "Pregovori o ceni i uslovima kupovine",
+        "Priprema dokumentacije i koordinacija do overe"
+      ],
+      reviews: [
+        { text:"Stan je prodat u roku od pet nedelja, po ceni koju su predložili na prvom izlasku. Sve obilaske su vodili sami.", name:"Klijent (placeholder tekst)" },
+        { text:"Izdavali smo stan iz inostranstva. Dobili smo proveren zakupac, ugovor i popis stanja bez da smo dolazili.", name:"Klijent (placeholder tekst)" },
+        { text:"Najviše je značilo što smo imali jednu osobu za sve, od katastra do notara.", name:"Klijent (placeholder tekst)" }
+      ],
+      team: withImg([
+        { slot:"t1", name:"Ime Prezime", role:"Vlasnik i posrednik", phone:"064 52 85 000" },
+        { slot:"t2", name:"Ime Prezime", role:"Agent prodaje", phone:"064 52 85 000" },
+        { slot:"t3", name:"Ime Prezime", role:"Agent izdavanja", phone:"064 52 85 000" },
+        { slot:"t4", name:"Ime Prezime", role:"Dokumentacija", phone:"064 52 85 000" }
+      ], 12),
+      posts: vodiciList,
+      ostaliVodici: vodiciList.filter(p => p.slot !== this.state.otvoreniVodic).slice(0, 3),
+      a: this.clanak(vodiciList),
+      isArticle: page === "article",
+      goBlog: this.go("blog"),
+      izabraniSlot: this.state.izabrani || null,
+      k: this.state.kontakt || { ime: "", telefon: "", mail: "", tema: "Tražim stan za kupovinu", poruka: "" },
+      onIme: this.setK("ime"), onTelefon: this.setK("telefon"), onMail: this.setK("mail"),
+      onTema: this.setK("tema"), onPoruka: this.setK("poruka"),
+      sendMail: this.sendMail,
+      mail: Component.MAIL,
+      statusTekst: ({
+        slanje: "Šaljem poruku...",
+        ok: "Poruka je poslata. Javljamo se u najkraćem roku.",
+        greska: "Slanje nije uspelo. Pozovite nas na 064 52 85 000 ili pišite na " + Component.MAIL + "."
+      })[this.state.status] || ("Poruka ide na " + Component.MAIL + ". Možete nas i pozvati na 064 52 85 000."),
+      statusBoja: this.state.status === "ok" ? "#2F9E44" : (this.state.status === "greska" ? "#E03131" : "#6B7280")
+    };
+  }
+}
+
+</script>
+</body>
+</html>

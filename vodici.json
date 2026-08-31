@@ -1,0 +1,266 @@
+{
+  "_uputstvo": {
+    "kako": "Svaki vodic je jedan blok u listi 'vodici'. Dodavanje: kopiraj blok i promeni podatke. Uklanjanje: obrisi blok (posle zadnjeg nema zapete).",
+    "slot": "Ime slike u folderu slike/ (npr. p7 znaci slike/p7.jpg). Nikad dva ista.",
+    "boja": "#2F9E44 zelena, #F08C1E narandzasta, #E03131 crvena",
+    "sadrzaj": "Lista sekcija. Svaka ima 'podnaslov' i 'pasusi' (lista pasusa). Podnaslov mozes ostaviti prazan ako ti ne treba."
+  },
+  "vodici": [
+    {
+      "slot": "p1",
+      "tag": "Troškovi",
+      "color": "#E03131",
+      "title": "Porez na prenos apsolutnih prava: 2,5%",
+      "excerpt": "Ko ga plaća, kada dolazi rešenje i u kojim slučajevima kupac prvog stana može biti oslobođen.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Porez na prenos apsolutnih prava je jedan od najčešćih razloga za neprijatno iznenađenje posle kupovine. Stopa je 2,5% i obračunava se na tržišnu vrednost nekretnine koju utvrđuje poreska uprava, a ne obavezno na cenu upisanu u ugovoru. Ako je ugovorena cena znatno niža od tržišne, osnovica može biti veća od onoga što ste platili."
+          ]
+        },
+        {
+          "podnaslov": "Ko plaća porez",
+          "pasusi": [
+            "Po zakonu je poreski obveznik prodavac. U praksi se ugovorom najčešće predviđa da porez plaća kupac, pa je važno da to pitanje bude jasno rešeno pre potpisivanja, a ne posle.",
+            "Ako ugovor o tome ne kaže ništa, obaveza ostaje na prodavcu, ali rešenje poreske uprave dolazi na adresu prodavca i tek onda počinje neprijatan razgovor o tome kome pripada trošak."
+          ]
+        },
+        {
+          "podnaslov": "Rokovi",
+          "pasusi": [
+            "Poreska prijava se podnosi u roku od 30 dana od dana overe ugovora. Rešenje o utvrđenom porezu dolazi kasnije, a plaćanje se vrši u roku navedenom u rešenju. Zakašnjenje sa prijavom nosi kaznu, pa je uputno da prijavu preda posrednik ili advokat koji vodi transakciju."
+          ]
+        },
+        {
+          "podnaslov": "Oslobođenje za kupca prvog stana",
+          "pasusi": [
+            "Kupac prvog stana može biti oslobođen ovog poreza pod uslovima koje propisuje zakon: da je punoletni državljanin Srbije sa prebivalištem u zemlji, da od 2006. godine nije imao u vlasništvu stan na teritoriji Srbije, i da kupuje stan za sebe i članove svog domaćinstva.",
+            "Oslobođenje se priznaje do određene površine, uz dodatnu kvadraturu po članu domaćinstva koji takođe nije imao stan. Za deo površine iznad tog limita porez se plaća.",
+            "Zahtev se podnosi zajedno sa poreskom prijavom, uz dokumentaciju o prebivalištu i izjavu o ispunjenosti uslova. Pre kupovine proverite svoj status, jer se oslobođenje koristi samo jednom."
+          ]
+        },
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Ovaj tekst je informativan i ne predstavlja pravni savet. Za konkretnu situaciju pozovite nas na 064 52 85 000, pa ćemo proći kroz vaš slučaj i, ako treba, uključiti advokata."
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "p2",
+      "tag": "Kupovina",
+      "color": "#2F9E44",
+      "title": "Spisak troškova kupovine stana",
+      "excerpt": "Overa, takse, provizija i porezi: sve što na cenu stana dolazi kao dodatak.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Cena iz oglasa nije konačan iznos koji izlazi iz vašeg džepa. Kod kupovine stana u Pančevu razlika je najčešće između jednog i tri procenta cene, a kod kredita i više. Zato je korisno da ceo spisak vidite pre nego što date depozit."
+          ]
+        },
+        {
+          "podnaslov": "Overa ugovora kod notara",
+          "pasusi": [
+            "Naknada za solemnizaciju kupoprodajnog ugovora zavisi od vrednosti nekretnine i određena je javnobeležničkom tarifom. Uz to idu i troškovi izdavanja overenih prepisa, koji su potrebni za katastar i poresku prijavu."
+          ]
+        },
+        {
+          "podnaslov": "Porez na prenos",
+          "pasusi": [
+            "Dva i po procenta na tržišnu vrednost, osim ako se ne ostvari oslobođenje za kupca prvog stana. Detalje smo objasnili u posebnom vodiču."
+          ]
+        },
+        {
+          "podnaslov": "Uknjižba i katastar",
+          "pasusi": [
+            "Taksa za upis prava vlasništva u katastar nepokretnosti, uz izvod iz lista nepokretnosti koji se pribavlja pre kupovine radi provere tereta. Ovi troškovi su mali u odnosu na ostale, ali se lako zaborave."
+          ]
+        },
+        {
+          "podnaslov": "Provizija agencije",
+          "pasusi": [
+            "Ugovara se pre početka posla, plaća se po realizovanoj transakciji i uvek stoji u ugovoru o posredovanju. Kod nas nema naplate unaprijed i nema naknadnih stavki koje se pojave na kraju."
+          ]
+        },
+        {
+          "podnaslov": "Ako kupujete na kredit",
+          "pasusi": [
+            "Dodaju se procena vrednosti nekretnine od strane ovlašćenog procenitelja, naknada za obradu kredita, osiguranje kod Nacionalne korporacije, polisa osiguranja nekretnine i taksa za upis hipoteke. Banka je obavezna da vam sve to prikaže u ponudi pre potpisa.",
+            "Naš savet je da pre potraživanja stana odete u dve banke i uzmete informativne ponude. Time saznate koliko realno možete da kupite, a ne koliko biste želeli."
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "p3",
+      "tag": "Tržište",
+      "color": "#F08C1E",
+      "title": "Novogradnja u Pančevu",
+      "excerpt": "Šta se gradi, u kojim naseljima i na šta gledati pri kupovini stana u izgradnji.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Novogradnja u Pančevu poslednjih godina najviše se gradi u širem centru i u naseljima koja se naslanjaju na njega. Stanovi u izgradnji su po pravilu jeftiniji od gotovih, ali sa sobom nose i rizik koji se ne vidi u oglasu."
+          ]
+        },
+        {
+          "podnaslov": "Proverite investitora, ne samo stan",
+          "pasusi": [
+            "Pre bilo kakve uplate tražite građevinsku dozvolu, izvod iz katastra za parcelu i podatke o investitoru. Zanima vas da li je gradio i ranije, da li su ti objekti uknjiženi i koliko je trajalo od najave do predaje ključeva.",
+            "Objekat bez građevinske dozvole ne može da se uknjiži, a stan koji ne može da se uknjiži ne može ni da se založi kod banke ni lako da se proda dalje."
+          ]
+        },
+        {
+          "podnaslov": "Ugovor i dinamika plaćanja",
+          "pasusi": [
+            "Kod stanova u izgradnji plaćanje se deli po fazama. Insistirajte da u ugovoru stoji rok završetka, opis radova i materijala, način rešavanja odstupanja u kvadraturi i posledice zakašnjenja investitora.",
+            "Predugovor treba da bude overen kod notara i upisan u katastar kao zabeležba, čime se sprečava da isti stan bude prodat dva puta."
+          ]
+        },
+        {
+          "podnaslov": "PDV ili porez na prenos",
+          "pasusi": [
+            "Prvi prenos novoizgrađenog stana od investitora nosi PDV, dok drugi promet nosi porez na prenos apsolutnih prava. To su različiti režimi i različiti iznosi, pa pitajte prodavca šta se konkretno primenjuje na vaš stan."
+          ]
+        },
+        {
+          "podnaslov": "Šta gledati na terenu",
+          "pasusi": [
+            "Orijentacija stana, visina plafona, položaj u odnosu na saobraćajnicu, broj stanova po ulazu i broj parking mesta u odnosu na broj stanova. To su stvari koje kasnije određuju kako se u stanu živi i koliko lako se prodaje."
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "p4",
+      "tag": "Kredit",
+      "color": "#2F9E44",
+      "title": "Kako se računa stambeni kredit",
+      "excerpt": "Učešće, kamata, osiguranje i procena, od prijave do isplate prodavcu.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Stambeni kredit izgleda komplikovano dok ne razložite iznos na tri stvari: koliko unosite svog novca, koliko banka daje i koliko mesečno možete da izdvojite."
+          ]
+        },
+        {
+          "podnaslov": "Učešće",
+          "pasusi": [
+            "Banke po pravilu finansiraju deo procenjene vrednosti nekretnine, a ostatak unosite sami. Bitno je da se učešće računa na procenjenu, ne na ugovorenu vrednost. Ako procena bude niža od cene, razlika pada na vas."
+          ]
+        },
+        {
+          "podnaslov": "Rata i kreditna sposobnost",
+          "pasusi": [
+            "Banka gleda odnos rate i vaših redovnih prihoda. Postojeći krediti, kartice i dozvoljeni minus umanjuju taj prostor, čak i kada ih ne koristite. Zato ima smisla zatvoriti nepotrebne kartice pre prijave.",
+            "Kod fiksne kamate rata je ista celo vreme ili u dužem početnom periodu. Kod varijabilne se menja sa referentnom stopom. Pitajte banku da vam pokaže ratu u oba scenarija."
+          ]
+        },
+        {
+          "podnaslov": "Sporedni troškovi kredita",
+          "pasusi": [
+            "Procena vrednosti, obrada kredita, osiguranje kod Nacionalne korporacije, polisa osiguranja nekretnine, upis hipoteke. Sve to plaćate na početku i sve to ulazi u efektivnu kamatnu stopu koju banka mora da vam prikaže."
+          ]
+        },
+        {
+          "podnaslov": "Kako izgleda proces",
+          "pasusi": [
+            "Prvo informativna ponuda banke, pa izbor stana, pa procena, pa odobrenje, pa overa kupoprodajnog ugovora kod notara sa naznakom da se plaćanje vrši iz kredita, pa upis hipoteke i na kraju isplata prodavcu.",
+            "Od odobrenja do isplate obično prođe nekoliko nedelja. Prodavcu to treba reći na početku, da ne bi bilo nesporazuma oko roka."
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "p5",
+      "tag": "Izdavanje",
+      "color": "#F08C1E",
+      "title": "Ugovor o zakupu koji vas štiti",
+      "excerpt": "Depozit, popis stanja, otkazni rok i prijava zakupca: obaveze vlasnika u praksi.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Većina problema kod izdavanja ne nastaje zbog zlih namera, nego zbog toga što ugovor ne pominje situaciju koja se dogodila. Dobar ugovor o zakupu je kratak, ali pokriva sve što se u praksi zaista dešava."
+          ]
+        },
+        {
+          "podnaslov": "Depozit",
+          "pasusi": [
+            "Uobičajeno je jedna mesečna kirija. U ugovoru treba da stoji čemu depozit služi, u kom roku se vraća i šta se od njega može odbiti. Bez toga svaki razgovor na kraju zakupa postaje pregovor."
+          ]
+        },
+        {
+          "podnaslov": "Popis stanja",
+          "pasusi": [
+            "Prilog ugovoru sa spiskom stvari u stanu, stanjem uređaja i stanjem brojila na dan predaje, potpisan od obe strane. Fotografije pomažu više od opisa. Ovo je najjednostavniji način da se izbegne spor o tome šta je bilo oštećeno pre useljenja."
+          ]
+        },
+        {
+          "podnaslov": "Trajanje i otkazni rok",
+          "pasusi": [
+            "Definišite period zakupa, otkazni rok za obe strane i uslove pod kojima se ugovor može raskinuti pre roka. Takođe rešite ko plaća koje troškove, ko sme da izvodi radove i da li je dozvoljeno držanje životinja i podzakup."
+          ]
+        },
+        {
+          "podnaslov": "Prijava zakupca i porez",
+          "pasusi": [
+            "Prihod od zakupa se prijavljuje i porez se plaća. Prijavljen zakup vam istovremeno daje realnu pravnu poziciju ako dođe do spora, jer se pozivate na ugovor koji postoji i u evidenciji, ne samo u fioci."
+          ]
+        },
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Ako izdajete iz inostranstva ili prosto ne želite da vodite obilaske, mi radimo selekciju zakupaca, ugovor, popis stanja i predaju ključeva."
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "p6",
+      "tag": "Prodaja",
+      "color": "#E03131",
+      "title": "Kako pripremiti stan za obilaske",
+      "excerpt": "Male stvari koje utiču na prvu reakciju kupca i na konačnu cenu.",
+      "sadrzaj": [
+        {
+          "podnaslov": "",
+          "pasusi": [
+            "Kupac odluku o tome da li mu se stan uklapa donosi u prvih par minuta, a ostatak obilaska traži potvrdu te odluke. Priprema ne znači renoviranje, nego uklanjanje svega što odvlači pažnju."
+          ]
+        },
+        {
+          "podnaslov": "Pre fotografisanja",
+          "pasusi": [
+            "Sklonite sitne predmete sa radnih površina, magnete sa frižidera, sušilicu sa veša i lične fotografije. Operite prozore i uključite sva svetla. Prostor treba da izgleda prazniji nego što je, jer prazan prostor kupac lakše zamisli kao svoj.",
+            "Fotografije snimajte danju, sa ugla prostorije, sa telefonom u horizontalnom položaju i na visini grudi. Loše fotografije skupo koštaju, jer smanjuju broj poziva."
+          ]
+        },
+        {
+          "podnaslov": "Male popravke koje se isplate",
+          "pasusi": [
+            "Zamena pregorelih sijalica, silikon u kupatilu, kvake koje ne rade, škripanje vrata, krečenje najoštećenije zidne površine. Sve su to sitni iznosi koji uklanjaju osećaj da je stan zanemaren."
+          ]
+        },
+        {
+          "podnaslov": "Tokom obilaska",
+          "pasusi": [
+            "Provetrite pre dolaska, ugasite televizor i pustite kupca da hoda prvi. Nemojte pratiti u koracima i nemojte objašnjavati svaku prostoriju. Pitanja koja kupac postavi sam su korisnija od svake ture.",
+            "Ako je moguće, obilaske zakazujte u vreme kada u stan ulazi najviše svetla."
+          ]
+        },
+        {
+          "podnaslov": "Dokumentacija spremna",
+          "pasusi": [
+            "Izvod iz lista nepokretnosti, dokaz o plaćenim računima i energetski pasoš, ako ga imate. Kupac koji vidi da je dokumentacija uredna lakše prelazi na razgovor o ceni."
+          ]
+        }
+      ]
+    }
+  ]
+}

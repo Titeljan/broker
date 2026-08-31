@@ -1,0 +1,361 @@
+{
+  "_uputstvo": {
+    "kako": "Svaki stan je jedan blok u listi 'stanovi' ispod. Dodavanje: kopiraj ceo blok (od { do },) i promeni podatke. Uklanjanje: obriši blok. Pazi da posle zadnjeg bloka NEMA zapete.",
+    "slot": "Jedinstvena oznaka za polje u koje prevlačiš fotografiju. Nikad dva ista, za novi stan koristi sledeći slobodan: l7, l8, l9...",
+    "namena": "Mora biti tačno 'Prodaja' ili 'Izdavanje', od toga zavisi filter na strani Ponuda.",
+    "badge": "Oznaka na slici. Ostavi \"\" ako nema oznake.",
+    "badgeColor": "#2F9E44 zelena (uknjižen, useljivo), #F08C1E narandžasta (novo, novogradnja), #E03131 crvena (sniženo, poslednji stan)",
+    "filteri": "Polja tip, cenaBroj, m2, sobeBroj i novogradnja koristi pretraga. cenaBroj je broj bez tačaka i valute (kod izdavanja: mesečna cena). sobeBroj: garsonjera 1, jednoiposoban 1.5, itd. novogradnja: true ili false.",
+    "detalji": "Za stranu detalja stana: 'oglasId' je broj oglasa, 'opis' je lista pasusa (dodaj ili obriši pasus po želji), 'detalji' je lista parova [naziv, vrednost] u tabeli. Fotografije za stranu detalja idu u slike/ kao <slot>-1.jpg, <slot>-2.jpg i <slot>-3.jpg (npr. l7-1.jpg)."
+  },
+  "stanovi": [
+    {
+      "slot": "l1",
+      "naslov": "Trosoban stan, Centar",
+      "naselje": "Centar",
+      "namena": "Prodaja",
+      "cena": "118.000 €",
+      "cenaM2": "1.639 €/m²",
+      "kvadratura": "72 m²",
+      "sobe": "3 sobe",
+      "sprat": "3/5",
+      "grejanje": "Gradsko",
+      "badge": "Novo",
+      "badgeColor": "#F08C1E",
+      "tip": "Stan",
+      "cenaBroj": 118000,
+      "m2": 72,
+      "sobeBroj": 3,
+      "novogradnja": false,
+      "oglasId": "BN-2026-041",
+      "opis": [
+        "Stan se nalazi na trećem spratu zgrade u samom centru Pančeva, sa liftom i orijentacijom na dve strane. Struktura: dnevna soba sa izlazom na terasu, dve spavaće sobe, kupatilo sa prozorom, odvojena kuhinja sa trpezarijom i ostava.",
+        "Kompletno renoviran 2023. godine: nova stolarija, instalacije i podovi. Uknjižen, bez tereta, useljiv odmah po overi kupoprodajnog ugovora."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Trosoban"
+        },
+        {
+          "k": "Godina izgradnje",
+          "v": "1985."
+        },
+        {
+          "k": "Renoviran",
+          "v": "2023."
+        },
+        {
+          "k": "Lift",
+          "v": "Da"
+        },
+        {
+          "k": "Terasa",
+          "v": "Da, 6 m²"
+        },
+        {
+          "k": "Uknjižen",
+          "v": "Da, bez tereta"
+        },
+        {
+          "k": "Useljivo",
+          "v": "Odmah"
+        }
+      ]
+    },
+    {
+      "slot": "l2",
+      "naslov": "Dvosoban stan, Strelište",
+      "naselje": "Strelište",
+      "namena": "Prodaja",
+      "cena": "78.000 €",
+      "cenaM2": "1.444 €/m²",
+      "kvadratura": "54 m²",
+      "sobe": "2 sobe",
+      "sprat": "2/4",
+      "grejanje": "Gradsko",
+      "badge": "Uknjižen",
+      "badgeColor": "#2F9E44",
+      "tip": "Stan",
+      "cenaBroj": 78000,
+      "m2": 54,
+      "sobeBroj": 2,
+      "novogradnja": false,
+      "oglasId": "BN-2026-047",
+      "opis": [
+        "Dvosoban stan u naselju Strelište, na drugom spratu zgrade bez lifta. Raspored: dnevna soba sa kuhinjom, spavaća soba, kupatilo i terasa okrenuta ka dvorišnoj strani.",
+        "Stan je održavan, sa zamenjenom stolarijom 2019. godine. Uknjižen i bez tereta, trenutno prazan. Škola, vrtić i pijaca su u krugu od pet minuta hoda."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Dvosoban"
+        },
+        {
+          "k": "Godina izgradnje",
+          "v": "1978."
+        },
+        {
+          "k": "Stolarija",
+          "v": "PVC, 2019."
+        },
+        {
+          "k": "Lift",
+          "v": "Ne"
+        },
+        {
+          "k": "Terasa",
+          "v": "Da, 4 m²"
+        },
+        {
+          "k": "Uknjižen",
+          "v": "Da, bez tereta"
+        },
+        {
+          "k": "Useljivo",
+          "v": "Odmah"
+        }
+      ]
+    },
+    {
+      "slot": "l3",
+      "naslov": "Garsonjera, Kotež",
+      "naselje": "Kotež",
+      "namena": "Izdavanje",
+      "cena": "250 € / mesec",
+      "cenaM2": "8,9 €/m²",
+      "kvadratura": "28 m²",
+      "sobe": "Garsonjera",
+      "sprat": "1/5",
+      "grejanje": "Etažno",
+      "badge": "Odmah useljivo",
+      "badgeColor": "#2F9E44",
+      "tip": "Stan",
+      "cenaBroj": 250,
+      "m2": 28,
+      "sobeBroj": 1,
+      "novogradnja": false,
+      "oglasId": "BN-2026-052",
+      "opis": [
+        "Garsonjera u naselju Kotež, na prvom spratu, kompletno opremljena za odmah useljenje. Kuhinja sa trpezarijskim delom, odvojeno kupatilo sa kabinom i ugradni plakar u predsoblju.",
+        "Izdaje se na period od najmanje godinu dana. Depozit u visini jedne mesečne kirije. Troškovi struje i komunalija nisu uključeni u cenu."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Garsonjera"
+        },
+        {
+          "k": "Opremljeno",
+          "v": "Da, kompletno"
+        },
+        {
+          "k": "Grejanje",
+          "v": "Etažno, gas"
+        },
+        {
+          "k": "Lift",
+          "v": "Da"
+        },
+        {
+          "k": "Depozit",
+          "v": "Jedna kirija"
+        },
+        {
+          "k": "Minimalni period",
+          "v": "12 meseci"
+        },
+        {
+          "k": "Useljivo",
+          "v": "Odmah"
+        }
+      ]
+    },
+    {
+      "slot": "l4",
+      "naslov": "Četvorosoban penthouse, Nova Misa",
+      "naselje": "Nova Misa",
+      "namena": "Prodaja",
+      "cena": "165.000 €",
+      "cenaM2": "1.684 €/m²",
+      "kvadratura": "98 m²",
+      "sobe": "4 sobe",
+      "sprat": "5/5",
+      "grejanje": "Gradsko",
+      "badge": "Novogradnja",
+      "badgeColor": "#F08C1E",
+      "tip": "Stan",
+      "cenaBroj": 165000,
+      "m2": 98,
+      "sobeBroj": 4,
+      "novogradnja": true,
+      "oglasId": "BN-2026-055",
+      "opis": [
+        "Stan na poslednjem spratu novogradnje u Novoj Misi, sa velikom terasom i pogledom na grad. Četiri odvojene prostorije, dnevni deo sa kuhinjom u jednom prostoru, dva kupatila i ostava.",
+        "Zgrada je završena 2025. godine, sa liftom, video nadzorom i garažnim mestima koja se kupuju odvojeno. Stan se prodaje bez posrednog PDV-a na drugi promet."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Četvorosoban"
+        },
+        {
+          "k": "Godina izgradnje",
+          "v": "2025."
+        },
+        {
+          "k": "Terasa",
+          "v": "Da, 18 m²"
+        },
+        {
+          "k": "Lift",
+          "v": "Da"
+        },
+        {
+          "k": "Kupatila",
+          "v": "Dva"
+        },
+        {
+          "k": "Garažno mesto",
+          "v": "Uz doplatu"
+        },
+        {
+          "k": "Useljivo",
+          "v": "Odmah"
+        }
+      ]
+    },
+    {
+      "slot": "l5",
+      "naslov": "Jednoiposoban stan, Tesla",
+      "naselje": "Tesla",
+      "namena": "Izdavanje",
+      "cena": "320 € / mesec",
+      "cenaM2": "7,8 €/m²",
+      "kvadratura": "41 m²",
+      "sobe": "1,5 soba",
+      "sprat": "4/6",
+      "grejanje": "Gradsko",
+      "badge": "Namešten",
+      "badgeColor": "#2F9E44",
+      "tip": "Stan",
+      "cenaBroj": 320,
+      "m2": 41,
+      "sobeBroj": 1.5,
+      "novogradnja": false,
+      "oglasId": "BN-2026-058",
+      "opis": [
+        "Jednoiposoban stan na Tesli, četvrti sprat sa liftom. Namešten: garnitura, trpezarijski sto, dvokrilni plakar, mašina za pranje veša i kompletna kuhinja sa rernom.",
+        "Zgrada ima gradsko grejanje, a stan je okrenut ka mirnijoj strani. Idealno za jednu osobu ili par. Prijava boravka moguća."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Jednoiposoban"
+        },
+        {
+          "k": "Opremljeno",
+          "v": "Da, namešten"
+        },
+        {
+          "k": "Grejanje",
+          "v": "Gradsko"
+        },
+        {
+          "k": "Lift",
+          "v": "Da"
+        },
+        {
+          "k": "Depozit",
+          "v": "Jedna kirija"
+        },
+        {
+          "k": "Prijava boravka",
+          "v": "Moguća"
+        },
+        {
+          "k": "Useljivo",
+          "v": "Po dogovoru"
+        }
+      ]
+    },
+    {
+      "slot": "l6",
+      "naslov": "Dvoiposoban stan, Sodara",
+      "naselje": "Sodara",
+      "namena": "Prodaja",
+      "cena": "94.500 €",
+      "cenaM2": "1.500 €/m²",
+      "kvadratura": "63 m²",
+      "sobe": "2,5 sobe",
+      "sprat": "1/4",
+      "grejanje": "TA peć",
+      "badge": "Sniženo",
+      "badgeColor": "#E03131",
+      "tip": "Stan",
+      "cenaBroj": 94500,
+      "m2": 63,
+      "sobeBroj": 2.5,
+      "novogradnja": false,
+      "oglasId": "BN-2026-061",
+      "opis": [
+        "Dvoiposoban stan u Sodari, na prvom spratu, sa dva odvojena ulaza u sobe i prostranim predsobljem. Kuhinja je odvojena, kupatilo sa prozorom, uz stan ide i podrumska prostorija.",
+        "Cena je snižena zbog potrebe za osvežavanjem kupatila i podova. Stan je uknjižen, bez tereta i odmah dostupan za obilazak."
+      ],
+      "detalji": [
+        {
+          "k": "Tip nekretnine",
+          "v": "Stan"
+        },
+        {
+          "k": "Struktura",
+          "v": "Dvoiposoban"
+        },
+        {
+          "k": "Godina izgradnje",
+          "v": "1981."
+        },
+        {
+          "k": "Grejanje",
+          "v": "TA peć"
+        },
+        {
+          "k": "Lift",
+          "v": "Ne"
+        },
+        {
+          "k": "Podrum",
+          "v": "Da, 6 m²"
+        },
+        {
+          "k": "Uknjižen",
+          "v": "Da, bez tereta"
+        },
+        {
+          "k": "Stanje",
+          "v": "Za osvežavanje"
+        }
+      ]
+    }
+  ]
+}
