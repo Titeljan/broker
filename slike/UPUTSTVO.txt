@@ -1,0 +1,30 @@
+FOTOGRAFIJE
+
+Ubaci fotografije u ovaj folder pod tacno ovim imenima (JPG).
+
+Kartice stanova (jedna slika po stanu, ime = polje "slot" u stanovi.json):
+  l1.jpg  l2.jpg  l3.jpg  l4.jpg  l5.jpg  l6.jpg
+
+Strana detalja stana (tri slike po stanu):
+  l1-1.jpg  l1-2.jpg  l1-3.jpg
+  l2-1.jpg  l2-2.jpg  l2-3.jpg
+  l3-1.jpg  l3-2.jpg  l3-3.jpg
+  l4-1.jpg  l4-2.jpg  l4-3.jpg
+  l5-1.jpg  l5-2.jpg  l5-3.jpg
+  l6-1.jpg  l6-2.jpg  l6-3.jpg
+
+Ostale slike:
+  hero-main.jpg    velika slika na pocetnoj strani
+  home-team-1.jpg  slika levo u sekciji "Hajde da zajedno pronademo kupca"
+  home-team-2.jpg  slika desno u istoj sekciji
+  about-hero.jpg   slika na strani O nama
+  t1.jpg ... t4.jpg   fotografije clanova tima
+  p1.jpg ... p6.jpg   slike za tekstove na strani Vodici
+  contact-map.jpg  slika mape na strani Kontakt
+
+NOVI STAN
+Ako u stanovi.json dodas stan sa slotom l7, dodaj i:
+  slike/l7.jpg  (kartica)
+  slike/l7-1.jpg  slike/l7-2.jpg  slike/l7-3.jpg  (detalj)
+
+Preporuka: sirina 1600px, JPG, do 400 KB po slici.
